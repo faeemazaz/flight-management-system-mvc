@@ -1,0 +1,108 @@
+body {
+	background-color: #ffebee;
+}
+
+.title-logo {
+	font-size: 30px !important;
+}
+
+.pgname {
+	width: 50%;
+	border-radius: 50px;
+	background-color: #dc3545;
+	margin: 40px;
+	color: #fff;
+}
+
+.formmod {
+	background-color: #fff;
+	padding: 20px 25px;
+	border-radius: 0 0 5px 5px;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.errorbg {
+	color: red;
+	background-color: #ef98a1c4;
+	border: 2px dashed red;
+	border-radius: 5px;
+	font-weight: 600;
+}
+
+.active-modified {
+	color: #fff;
+	border: 1px solid #dc3545;
+	padding: 5px 10px;
+	display: block;
+}
+
+.book-card {
+	border: 1px solid #dc3545;
+}
+
+.book-card-body {
+	padding: 10px 15px;
+}
+
+.edit-booking {
+	display: block;
+	padding: 5px 10px;
+	border-radius: 0px;
+	border: 1px solid #dc3545;
+	width: 100%;
+}
+
+.nofound {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 40px;
+	font-weight: bold;
+	border: 1px solid #dc3545;
+	padding: 10px 200px;
+	border-radius: 10px;
+}
+
+.cancel-booking {
+	display: block;
+	padding: 5px 10px;
+	border: 1px solid #dc3545;
+	font-weight: bold;
+}
+
+.border-right-danger {
+	border-right: 1px solid #dc3545;
+}
+
+.person {
+	font-size: 20px;
+}
+
+.person-name {
+	display: block;
+	font-size: 12px;
+	font-weight: bold;
+	color: #8d8585;
+}
+
+.flight-name {
+	display: block;
+	font-size: 30px;
+	font-weight: 600;
+}
+
+
+.mb-3{margin: 40px 3%; position: relative}
+
+:focus{outline: none;}
+
+.col-3{float: left; width: 27.33%; margin: 40px 3%; position: relative;}
+input[type="text"], input[type="password"], input[type="date"]{font: 15px/24px "Lato", Arial, sans-serif; color: #333; width: 100%; box-sizing: border-box; letter-spacing: 1px;}
+.form-select{font: 15px/24px "Lato", Arial, sans-serif; color: #333; width: 100%; box-sizing: border-box; letter-spacing: 1px;}
+
+.effect-1{border: 0; padding: 7px 0; border-bottom: 1px solid #ccc;}
+
+
+.effect-1 ~ .focus-border{position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: #dc3545; transition: 0.4s;}
+.effect-1:focus ~ .focus-border{width: 100%; transition: 0.4s;}

@@ -1,0 +1,26 @@
+version: '3'
+services:
+
+  mysqldb:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=fzb123
+      - MYSQL_DATABASE=flight_managment_system
+      - MYSQL_USER=fzb
+      - MYSQL_PASSWORD=fzb123
+    ports:
+      - 3307:3306
+
+  myapp-main:
+    image: flight-api
+    restart: on-failure
+    depends_on:
+      - mysqldb
+    ports:
+      - 8085:8085
+    environment:
+      - DATABASE_HOST=mysqldb
+      - DATABASE_USER=fzb
+      - DATABASE_PASSWORD=fzb123
+      - DATABASE_NAME=flight_managment_system
+      - DATABASE_PORT=3306

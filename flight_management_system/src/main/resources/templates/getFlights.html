@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	th:replace="base::layout(~{::section})">
+<head>
+<title th:text="${title}"></title>
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-9 mx-auto formmod">
+					<form th:action="@{/search}" th:object="${flightfield}"
+						th:method="post">
+						<div class="row mb-5">
+							<div class="col-sm-6 mx-auto">
+								<h2 class="text-center">Search Flight Based Location</h2>
+								<div class="mb-3">
+									<input type="text" class="effect-1" name="from" th:value="${flightfield.from}" required="required" placeholder="Enter source">
+									<span class="focus-border"></span>
+								</div>
+								<div class="mb-3">
+									<input type="text" class="effect-1" name="to" th:value="${flightfield.to}" required="required" placeholder="Enter destination">
+									<span class="focus-border"></span>
+								</div>
+								<input type="submit"
+									class="btn btn-danger px-3 py-2 d-block mx-auto" value="Search" />
+							</div>
+						</div>
+					</form>
+
+					<th:block
+						th:if="${error == 'There is no flight available on this route !!'}">
+						<span class="d-block text-center px-3 py-2 errorbg">There is no flight available on this route !!</span>
+					</th:block>
+
+					<th:block th:if="${flights}">
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col" class="text-danger">Flight Id</th>
+									<th scope="col" class="text-danger">Flight Name</th>
+									<th scope="col" class="text-danger">From</th>
+									<th scope="col" class="text-danger">To</th>
+									<th scope="col" class="text-danger">Schedule Date</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="flight: ${flights}">
+									<td th:text="${flight.flightId}"></td>
+									<td th:text="${flight.flightname}"></td>
+									<td th:text="${flight.from}"></td>
+									<td th:text="${flight.to}"></td>
+									<td th:text="${flight.scheduleDate}"></td>
+								</tr>
+							</tbody>
+						</table>
+					</th:block>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
